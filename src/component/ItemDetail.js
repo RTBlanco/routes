@@ -21,6 +21,11 @@ function ItemDetail({ match, items }) {
   // }
   let item = items.find(item => item.id === parseInt(match.params.id))
 
+  if (typeof item === 'undefined') {
+    return (
+      <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loader"></img>
+    )
+  }
   return (
     <div>
       <h1>{item.title}</h1>
