@@ -20,12 +20,14 @@ function ItemDetail({ match, items }) {
   //     .then(item => console.log(item))
   // }
   let item = items.find(item => item.id === parseInt(match.params.id))
-  
+
   return (
     <div>
       <h1>{item.title}</h1>
-      <p>{item.price}</p>
-      <p>{item.description}</p>
+      <p><strong>Price:</strong>{item.price}</p>
+      <p><strong>Desciption:</strong>{item.description}</p>
+      <p><strong>Category:</strong>{item.category}</p>
+      <img src={item.image} alt={item.title} />
     </div>
   );
 }
