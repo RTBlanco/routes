@@ -6,21 +6,21 @@ import { Link } from 'react-router-dom';
 
 function ItemDetail({ match, items }) {
 
-  useEffect(() => {
-    setItem(items.find(item => item.id === parseInt(match.params.id) ))
-    // console.log(match.params.id)
-    // console.log(items)
-    // console.log(items.find(item => item.id === match.params.id ))
-  },[])
+  // useEffect(() => {
+  //   setItem(items.find(item => item.id === parseInt(match.params.id) ))
+  //   // console.log(match.params.id)
+  //   // console.log(items)
+  //   // console.log(items.find(item => item.id === match.params.id ))
+  // },[])
 
-  const [item, setItem] = useState();
 
   // const fetchItems = () => {
   //   fetch(`https://fakestoreapi.com/products/${item.id}`)
   //     .then(data => data.json())
   //     .then(item => console.log(item))
   // }
-
+  let item = items.find(item => item.id === parseInt(match.params.id))
+  
   return (
     <div>
       <h1>{item.title}</h1>

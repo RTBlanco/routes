@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 
 
 function Shop({items}) {
@@ -27,6 +28,7 @@ function Shop({items}) {
           </Link>
         </h1>
       ))}
+      {/* <Route path='/shop/:id' component={match => <ItemDetail {...match} items={items} /> }/>  */}
     </div>
   );
 }

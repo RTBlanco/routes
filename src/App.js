@@ -30,7 +30,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
           <Route exact path='/shop' component={() => <Shop items={items}/> } />
-          <Route path='/shop/:id' component={match => <ItemDetail {...match} items={items} /> }/> 
+          <Route path='/shop/:id' render={match => <ItemDetail {...match} items={items} /> }/> 
           {/* if giveing the component some props this is how you will be able to use match */}
         </Switch>
       </div>
