@@ -6,21 +6,11 @@ import { Link } from 'react-router-dom';
 
 function ItemDetail({ match, items }) {
 
-  // useEffect(() => {
-  //   setItem(items.find(item => item.id === parseInt(match.params.id) ))
-  //   // console.log(match.params.id)
-  //   // console.log(items)
-  //   // console.log(items.find(item => item.id === match.params.id ))
-  // },[])
-
-
-  // const fetchItems = () => {
-  //   fetch(`https://fakestoreapi.com/products/${item.id}`)
-  //     .then(data => data.json())
-  //     .then(item => console.log(item))
-  // }
   let item = items.find(item => item.id === parseInt(match.params.id))
 
+  // This will show a loading screen if the item does not yet load in 
+  // this is most likely not the correct way to handle this issue but it will 
+  // sufice until i have learn a better solution
   if (typeof item === 'undefined') {
     return (
       <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loader"></img>
